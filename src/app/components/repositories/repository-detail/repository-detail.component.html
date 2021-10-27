@@ -1,0 +1,22 @@
+<div class="users-container">
+  <mat-spinner
+    class="mt--2"
+    *ngIf="isLoading | async"
+    diameter="30"
+  ></mat-spinner>
+  <div class="users-info">
+    <div *ngFor="let user of users">
+      <figure class="user-info__img">
+        <img
+          width="100"
+          height="100"
+          src="{{ user.avatar_url }}"
+          class="user-info__img"
+          alt="id"
+        />
+      </figure>
+      <!-- <div class="user-info__id">{{ user.id }}</div> -->
+      <div class="user-info__name">{{ user.login }}</div>
+    </div>
+  </div>
+</div>

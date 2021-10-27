@@ -1,0 +1,38 @@
+<div class="repositories-list-container">
+  <header class="repositories__title">
+    <img
+      src="assets/icons/github.svg"
+      height="20"
+      width="20"
+      class="repositories__img"
+    />
+    <h1>Repositories</h1>
+  </header>
+
+  <section>
+    <mat-spinner
+      class="repositories__detail--spinner"
+      *ngIf="isLoading | async"
+      diameter="60"
+    ></mat-spinner>
+    <ul class="repositories__detail">
+      <li *ngFor="let oneRepo of repositories" (click)="onSelect(oneRepo)">
+        <div class="repo-container">
+          <span class="repo__name">{{ oneRepo.name }}</span>
+          <span class="repo__description">{{ oneRepo.description }}</span>
+          <div class="repo__miscellaneous">
+            <span class="repo__span">language: {{ oneRepo.language }}</span>
+            <span class="repo__span">forks: {{ oneRepo.forks }}</span>
+            <span class="repo__span">stars: {{ oneRepo.stars }}</span>
+            <span class="repo__span"
+              >open issues: {{ oneRepo.openIssues }}</span
+            >
+            <span class="repo__span"
+              >last updated: {{ oneRepo.lastUpdated }}</span
+            >
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+</div>

@@ -1,0 +1,86 @@
+$COLOR_GREY_DARK: #2c3a41;
+$COLOR_GREY_LIGHT: #586069;
+$COLOR_BLUE: #0366d6;
+
+.repositories-list-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 40px;
+
+  h1 {
+    margin: 10px 10px;
+  }
+
+  .repositories {
+    &__title {
+      display: flex;
+      border-bottom: 1px solid grey;
+      padding-left: 20px;
+    }
+
+    &__img {
+      display: flex;
+      align-self: center;
+    }
+
+    &__detail {
+      position: relative;
+      list-style-type: none;
+      padding: 0;
+      width: 50%;
+      margin: 20px auto;
+
+      &--spinner {
+        position: absolute;
+        left: 50%;
+      }
+
+      li {
+        cursor: pointer;
+        position: relative;
+        padding: 1rem 1rem;
+        width: 100%;
+        max-height: 12em;
+        overflow: scroll;
+        border-bottom: 1px solid grey;
+
+        &__:not(:last-child) {
+          border-radius: 4px;
+        }
+
+        &:hover {
+          color: $COLOR_GREY_DARK;
+          background-color: #e6e6e6;
+          border: 1px solid grey;
+        }
+
+        .repo-container {
+          .repo {
+            &__name {
+              display: block;
+              font-weight: 500;
+              line-height: 2rem;
+              font-size: large;
+              color: $COLOR_BLUE;
+              margin-bottom: 0.5rem;
+            }
+
+            &__description {
+              display: block;
+              flex: 0 0 20%;
+              margin-bottom: 5rem;
+              color: $COLOR_GREY_LIGHT !important;
+            }
+
+            &__miscellaneous {
+              display: flex;
+              justify-content: space-between;
+              color: $COLOR_GREY_LIGHT !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

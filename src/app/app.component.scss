@@ -1,0 +1,13 @@
+.app-container {
+  margin: 0 0 10% 0;
+
+  ::ng-deep {
+    mat-toolbar {
+      background-color: #24292e;
+    }
+  }
+
+  span {
+    color: white;
+  }
+}
